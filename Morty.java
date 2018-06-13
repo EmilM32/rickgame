@@ -20,12 +20,12 @@ public class Morty
         x += dx;
         y += dy;
         
-        if(y + yMorty >= granicePojemnika.getMaxY()) //odbicie kuli od granicy pojemnika
+        if(y + yMorty >= granicePojemnika.getMaxY())
         {
             y = (int)(granicePojemnika.getMaxY()-yMorty);
             dy = -dy;
         }
-        if(x + xMorty >= granicePojemnika.getMaxX()) //odbicie kuli od granicy pojemnika
+        if(x + xMorty >= granicePojemnika.getMaxX())
         {
             x = (int)(granicePojemnika.getMaxX()-xMorty);
             dx = -dx;
