@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
-/*
-* https://v-play.net/game-resources/16-sites-featuring-free-game-graphics#_Openclipart.org
-*/
 public class Main extends JFrame
 {
     public Main()
@@ -262,7 +259,7 @@ public class Main extends JFrame
                 
                 g.setColor(Color.WHITE);
                 g.setFont(new Font("Verdana", Font.PLAIN, 40));
-                g.drawString("Zjebałeś!", 520, 300);
+                g.drawString("Przegrałeś!", 520, 300);
                 
                 g.setFont(new Font("Verdana", Font.PLAIN, 30));
                 g.drawString("Naciśnij spację aby zacząć od nowa", 350, 350);
