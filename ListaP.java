@@ -25,9 +25,7 @@ public class ListaP extends JFrame
     {
         Connection polaczenie = null;
         try {
-            // Wskazanie jaki rodzaj bazy danych bęzie wykorzystany, tu sqlite
             Class.forName("org.sqlite.JDBC");
-            // Połączenie, wskazujemy rodzaj bazy i jej nazwę
             polaczenie = DriverManager.getConnection("jdbc:sqlite:" + baza + ".db");
             System.out.println("Połączyłem się z bazą " + baza);
         } catch (Exception e) {
@@ -37,18 +35,15 @@ public class ListaP extends JFrame
         return polaczenie;
     }
     public static void stworzTabele(Connection polaczenie, String tabela) {
-        // Obiekt odpowiadający za wykonanie instrukcji
         Statement stat = null;
         try {
-            stat = polaczenie.createStatement();
-            // polecenie SQL tworzące tablicę
+            stat = polaczenie.createStatement(); 
             String tabelaSQL = "CREATE TABLE " + tabela
                     + " (ID INT PRIMARY KEY     NOT NULL,"
                     + " IMIE        CHAR(50)     NOT NULL, "
                     + " SCORE         INT) ";
-            // wywołanie polecenia
-            stat.executeUpdate(tabelaSQL); 
-            // zamykanie wywołania i połączenia
+           stat.executeUpdate(tabelaSQL); 
+ 
             stat.close();
             polaczenie.close();
         } catch (SQLException e) {
@@ -81,7 +76,6 @@ public class ListaP extends JFrame
  
             stat.close();
             polaczenie.close();
-            // Komunikat i wydrukowanie końcowej formy polecenia SQL
             System.out.println("Polecenie: \n" + dodajSQL + "\n wykonane.");
         } catch (Exception e) {
             System.out.println("Nie mogę dodać danych " + e.getMessage());
